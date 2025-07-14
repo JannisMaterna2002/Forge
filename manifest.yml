@@ -1,0 +1,34 @@
+modules:
+  jiraServiceManagement:queuePage:
+    - key: call-queue2-hello-world-queue-page
+      resource: main
+      resolver:
+        function: resolver
+      render: native
+      title: call-queue2
+
+  function:
+    - key: resolver
+      handler: index.handler
+    - key: egress-function           # <--- diese Zeile hat vorher gefehlt oder war falsch
+      handler: index.egressFunction # <--- muss exakt zur Export-Funktion in index.js passen
+
+  webtrigger:
+    - key: egress-web-trigger
+      function: egress-function      # <--- verweist auf den obigen key
+      response:
+        type: dynamic
+
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+permissions:
+  scopes:
+    - storage:app
+
+app:
+  runtime:
+    name: nodejs22.x
+    memoryMB: 256
+    architecture: arm64
+  id: ari:cloud:ecosystem::app/98d63010-ee6f-4b32-916d-03b60bd33a92
