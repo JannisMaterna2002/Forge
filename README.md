@@ -1,4 +1,4 @@
-# Forge Call Queue – Demo App
+# Forge Call Queue – Demo App (WIP)
 
 📞 Forge Call Queue – Demo App
 Diese Forge-Demo-App für Jira zeigt eingehende Anrufe in Echtzeit an. Über eine simulierte API (POST-Request) wird ein neuer Anruf erzeugt und im Jira-Frontend dargestellt. Die App speichert den letzten Anruf temporär und erlaubt es, ihn manuell per Klick auf „Annehmen“ zu entfernen.
