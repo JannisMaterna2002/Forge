@@ -1,7 +1,20 @@
-# Forge Hello World
+# Forge Call Queue – Demo App
 
-This project contains a Forge app written in Javascript that displays `Hello World!` in a Jira Service Management Queue Page. 
+📞 Forge Call Queue – Demo App
+Diese Forge-Demo-App für Jira zeigt eingehende Anrufe in Echtzeit an. Über eine simulierte API (POST-Request) wird ein neuer Anruf erzeugt und im Jira-Frontend dargestellt. Die App speichert den letzten Anruf temporär und erlaubt es, ihn manuell per Klick auf „Annehmen“ zu entfernen.
 
+Features:
+
+Anzeige des aktuell eingehenden Anrufs
+Simulierter POST-Endpunkt zur Anrufgenerierung (egressFunction)
+Temporäre Speicherung via Forge storage
+Automatisches Polling im Frontend (alle 5 Sekunden)
+Einfacher „Annehmen“-Button zum Entfernen des Anrufs
+Technologien:
+
+Atlassian Forge (React UI + Custom Function)
+Forge Storage API
+Minimaler Backend/Frontend-Ansatz für Demo-Zwecke
 See [developer.atlassian.com/platform/forge/](https://developer.atlassian.com/platform/forge) for documentation and tutorials explaining Forge.
 
 ## Requirements
