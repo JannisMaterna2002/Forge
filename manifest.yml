@@ -1,0 +1,19 @@
+modules:
+  jiraServiceManagement:queuePage:
+    - key: firstcustomapp-hello-world-page
+      resource: main
+      resolver:
+        function: resolver
+      title: firstcustomapp
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: static/hello-world/build
+app:
+  runtime:
+    name: nodejs22.x
+    memoryMB: 256
+    architecture: arm64
+  id: ari:cloud:ecosystem::app/34f2ee58-db9e-482c-acc1-1eae79a281a2
